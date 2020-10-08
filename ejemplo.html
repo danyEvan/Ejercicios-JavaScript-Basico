@@ -146,11 +146,20 @@
         <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Promedio</h4>
         <div class=" row pt-5  ">
             <div class="col-sm-6 form-group ">
-                <h4>Clickear boton para iniciar el programa</h4><br>
-                <button  type="button" onclick='promedio()' class=" btn btn-dark mt-3" >Inicio</button>
+                <h6><u>Importante</u></h6>
+                <ol>
+                    <li>Introduzca cantidad de numeros que ingresara al programa.</li>
+                    <li>Haga "click" en el boton inicio para continuar.</li>
+                </ol>
+                <label for="numero">Cantidad de ingresos</label>
+                <input class="form-control" type="number" name="numero" id="numero"  >
+                <button  type="button" onclick='promedio(document.getElementById("numero").value)' class=" btn btn-dark mt-3" >Inicio</button>
                    
             </div>
-            
+            <div class="col-sm-12 col-xl-6 pl-2 text-center align-content-center justify-content-center" >
+                <p  id="resultado" style="font-size: 2rem;" ></p>
+
+            </div>
         </div>
     </div>
 <footer class="container-fluid text-center p-4">
