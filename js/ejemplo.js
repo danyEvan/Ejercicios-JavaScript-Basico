@@ -3,10 +3,13 @@ function producto(a,b){
 };
 
 function mayor(a,b){
-    if (a > b) {
-        document.getElementById("mayor").innerHTML = `${a} es mayor a ${b}`;
-    }else if (a < b) {
-        document.getElementById("mayor").innerHTML = `${b} es mayor a ${a}`;
+    let numeroUno = Number(a);
+        numeroDos = Number(b);
+
+    if (numeroUno > numeroDos) {
+        document.getElementById("mayor").innerHTML = `${numeroUno} es mayor a ${numeroDos}`;
+    }else if (numeroUno < numeroDos) {
+        document.getElementById("mayor").innerHTML = `${numeroDos} es mayor a ${numeroUno}`;
     } else {
         document.getElementById("mayor").innerHTML = "Los valores son iguales";
     }
