@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="./ejemplo.js"></script>
+    <title>Ejercicios JavaScript</title>
+</head>
+<body>
+    <header class="container-fluid text-center p-5" style="height: 15rem; width: auto;">
+        <h1 class=" p-1 pr-5 pl-5 d-inline text-white bg-dark">JavaScript</h1>
+    </header>
+    <div class="container p-5" style="background-color: #eee;">
+        <h3 class=" p-1 pr-5 pl-5 d-inline text-white bg-dark">Ejercicios</h3>
+        <div class="row pt-5">
+            <ol>
+                <li> <a href="#01"> Producto de dos valores.</a></li>
+                <li> <a href="#02"> Verificar cual numero es mayor o si son iguales.</a></li>
+                <li> <a href="#03"> Concatenacion de cadenas de texto.</a></li>
+                <li> <a href="#04"> Programa saldo segun medio de pago.</a></li>
+                <li> <a href="#05"> A traves de un numero realizar medio arbol.</a></li>
+                <li> <a href="#06"> Ingresar un numero y retornar que dia de la semana es.</a></li>
+                <li> <a href="#07"> Ingresar valores que genere un array y mostrar el promedio de los mismos.</a></li>
+                
+            </ol>
+        </div>
+    </div>
+    
+    <div id="01" class="container p-5 mt-5 justify-content-center" style="background-color: #eee;">
+        <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Producto de dos valores</h4>
+        <div class="row pt-5 ">
+            <div class="col-sm-12 col-md-6 col-xl-6 p-2 form-group">
+                <label for="num1">Primer numero</label>
+                <input class="form-control" type="number" name="num1" id="1">
+                <label for="num2">Segundo numero</label>
+                <input class="form-control" type="number" name="num2" id="2">
+                <button type="button" onclick='producto(document.getElementById("1").value,document.getElementById("2").value)' class="btn btn-dark mt-3" >Aceptar</button>
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-xl-6  ">
+                <p id="producto" class="text-center p-2" style="font-size: 2.5rem;"></p>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="02" class="container p-5 mt-5 justify-content-center" style="background-color: #eee;">
+        <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Mayor numero</h4>
+        <div class=" row pt-5 ">
+            <div class="col-sm-12 col-md-6 col-xl-6 p-2 form-group">
+                <label for="num1">Primer numero</label>
+                <input class="form-control" type="number" name="num1" id="3">
+                <label for="num2">Segundo numero</label>
+                <input class="form-control" type="number" name="num2" id="4">
+                <button type="button" onclick='mayor(document.getElementById("3").value,document.getElementById("4").value)' class="btn btn-dark mt-3" >Aceptar</button>
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-xl-6  ">
+                <p id="mayor" class="text-center p-2" style="font-size: 2.5rem;"></p>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="03" class="container p-5 mt-5 justify-content-center" style="background-color: #eee;">
+        <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Concatenar textos</h4>
+        <div class=" row pt-5 ">
+            <div class="col-sm-12 col-md-6 col-xl-6 p-2 form-group">
+                <label for="text1">Primer texto</label>
+                <input class="form-control" type="string" name="text1" id="text1">
+                <label for="text2">Segundo texto</label>
+                <input class="form-control" type="string" name="text2" id="text2">
+                <button type="button" onclick='concatenar(document.getElementById("text1").value,document.getElementById("text2").value)' class="btn btn-dark mt-3" >Aceptar</button>
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-xl-6  ">
+                <p id="concatenar" class="text-center p-2" style="font-size: 2.5rem;"></p>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="04" class="container p-5 mt-5 justify-content-center" style="background-color: #eee;">
+        <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Descuento</h4>
+        <p class="pt-3 "> <u>Medio de Pago y descuento ( No acumulables )</u> <br>Efectivo 30% de descuento sobre el total. <br> Debito 20% sobre el total. <br>Tarjeta de credito 10% sobre el total. <br>Para compras mayores a 400 descuento del 40% sobre el total.</p>
+        <ul>
+            <li>Efectivo cod: <strong>E</strong></li>
+            <li>Debito cod: <strong>D</strong></li>
+            <li>Tarjeta de credito cod: <strong>C</strong></li>
+        </ul>
+        <div class=" row pt-5 ">
+            <div class="col-sm-12 col-md-6 col-xl-6 p-2 form-group">
+                <label for="valor">Valor Producto/s</label>
+                <input class="form-control" type="number" name="valor" id="valor">
+                <label for="codigo">Codigo Medio de pago</label>
+                <input class="form-control" type="string" name="codigo" id="codigo">
+                <button type="button" onclick='descuentos(document.getElementById("valor").value,document.getElementById("codigo").value)' class="btn btn-dark mt-3" >Aceptar</button>
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-xl-6  ">
+                <p id="descuento" class="text-center p-2" style="font-size: 2.5rem;"></p>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div  id="05" class="container p-5 mt-5 justify-content-center" style="background-color: #eee;">
+        <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Medio Arbol</h4>
+        <div class=" row pt-5 ">
+            <div class="col-sm-12 col-md-6 col-xl-6 p-2 form-group">
+                <label for="limite">Ingrese limite de filas</label>
+                <input class="form-control" type="number" name="limite" id="altura"  >
+                <button type="button" onclick='medioArbol(document.getElementById("altura").value)' class="btn btn-dark mt-3" >Aceptar</button>
+                
+            </div>
+            <div class="col-sm-12 col-xl-6 pl-2" id="arbol">
+            
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="06" class="container p-5 mt-5 justify-content-center" style="background-color: #eee;">
+        <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Dia de la semana</h4>
+        <div class=" row pt-5 ">
+            <div class="col-sm-12 col-md-6 col-xl-6 p-2 form-group">
+                <label for="dia">Ingrese un valor del 1 al 7 para recibir dia correspondiente</label>
+                <input class="form-control" type="number" name="dia" id="dia"  >
+                <button type="button" onclick='diaSemana(document.getElementById("dia").value)' class="btn btn-dark mt-3" >Aceptar</button>
+                   
+            </div>
+            <div class="col-sm-12 col-xl-6 pl-2 text-center" >
+                <p id="contenido" style="font-size: 2rem;" ></p>
+
+            </div>
+            
+        </div>
+    </div>
+    <div id="07" class="container p-5 mt-5 mb-5"style="background-color: #eee;">
+        <h4 class=" col-sm-12  p-1 pr-4 pl-4 d-inline text-white bg-dark ">Promedio</h4>
+        <div class=" row pt-5  ">
+            <div class="col-sm-6 form-group ">
+                <h4>Clickear boton para iniciar el programa</h4><br>
+                <button  type="button" onclick='promedio()' class=" btn btn-dark mt-3" >Inicio</button>
+                   
+            </div>
+            
+        </div>
+    </div>
+<footer class="container-fluid text-center p-4">
+    <small>	©danyEvan 2020</small>
+</footer>
+
+</body>
+</html>
